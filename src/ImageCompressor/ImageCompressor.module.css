@@ -1,0 +1,58 @@
+.MainContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+.StepsContainer {
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.InputContainer,
+.OutputContainer {
+  min-width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.BlackBtn {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #343a40;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin-top: 20px;
+  width: 60%;
+  text-align: center;
+}
+.Image {
+  max-height: auto;
+  max-width: 500px;
+  min-width: 300px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1200px) {
+  .Image {
+    max-width: 300px;
+  }
+}
+@media (max-width: 914px) {
+  .MainContainer {
+    justify-content: center;
+  }
+  .Image {
+    max-width: 90%;
+    margin: 20px 0px;
+  }
+}
