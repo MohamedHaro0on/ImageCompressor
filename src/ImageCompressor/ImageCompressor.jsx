@@ -4,7 +4,7 @@ import Steps from "./Steps";
 import imageCompression from "browser-image-compression";
 
 
-function ImageCompressor() {
+const ImageCompressor = () => {
     const [state, setState] = useState({
         comspressedLink: "http://navparivartan.in/wp-content/uploads/2018/11/placeholder.png",
         orginalImage: "",
@@ -14,7 +14,7 @@ function ImageCompressor() {
         outputFileName: false,
     });
 
-    function HandleChange(e) {
+    const HandleChange = (e) => {
         let ImageFile = e.target.files[0];
         let Image = URL.createObjectURL(ImageFile);
         setState({
@@ -26,7 +26,7 @@ function ImageCompressor() {
         }
         )
     }
-    function HandleCompress(e) {
+    const HandleCompress = (e) => {
         e.preventDefault();
         const options = {
             maxSizeMB: 1,
@@ -53,18 +53,20 @@ function ImageCompressor() {
                 <img
                     className={ClassNames.Image}
                     src={state.uploadImage ? state.originalLink : "http://navparivartan.in/wp-content/uploads/2018/11/placeholder.png"}
-                    alt="input"
+                    alt="Your Input"
                 />
                 <input className={ClassNames.BlackBtn} accept="image/*" type="file" onChange={(e) => HandleChange(e)} />
+
                 {/* The Compress Button */}
+                {
+                    state.outputFileName &&
+                    <button className={ClassNames.BlackBtn} onClick={(e) => HandleCompress(e)}>Compress</button>
+                }
             </div>
-            {
-                state.outputFileName &&
-                <button className={ClassNames.BlackBtn} onClick={(e) => HandleCompress(e)}>Compress</button>
-            }
+
             {/* the Compressed Image. */}
             <div className={ClassNames.OutputContainer}>
-                <img src={state.comspressedLink} className={ClassNames.Image} />
+                <img src={state.comspressedLink} className={ClassNames.Image} alt="The compressed Image" />
                 {state.clicked && <a download={state.outputFileName} href={state.comspressedLink} className={ClassNames.BlackBtn}> download </a>}
             </div>
         </div>

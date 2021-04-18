@@ -36,7 +36,7 @@
   text-align: center;
 }
 .Image {
-  max-height: auto;
+  max-height: 500px;
   max-width: 500px;
   min-width: 300px;
   margin-bottom: 20px;

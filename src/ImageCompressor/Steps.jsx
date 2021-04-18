@@ -1,6 +1,6 @@
 import ClassNames from "./ImageCompressor.module.css";
 
-function Steps() {
+const Steps = () => {
     let steps = ['Upload Image', 'Click on Compress', 'DownLoad Compressed Image']
     return (
         <section className={ClassNames.StepsContainer}>
